@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0b0b0b; /* preto */
+  color: #f0f0f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #121212;
+  padding: 1rem 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0077cc; /* azul-marinho ao passar o mouse */
+}
+
+main {
+  flex: 1;
+  padding: 2rem 4rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.media-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2.5rem; /* 3rem entre linhas, 2.5rem entre colunas */
+  justify-items: center;
+  padding: 2rem 0;
+}
+
+.media-item {
+  background-color: #111111;
+  border: 1px solid #2a2a2a; /* borda mais clara que o fundo */
+  border-radius: 16px; /* cantos arredondados */
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.media-item img {
+  width: 100%;
+  aspect-ratio: 1/1; /* quadrado perfeito */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: #121212;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+

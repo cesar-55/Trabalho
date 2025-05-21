@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .contato-container {
+      display: flex;
+      height: calc(100vh - 100px);
+    }
+
+    .contato-form {
+      flex: 1;
+      background-color: #121212;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contato-form h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contato-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contato-form input,
+    .contato-form textarea {
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    .contato-form input:focus,
+    .contato-form textarea:focus {
+      outline: 1px solid #0077ff;
+    }
+
+    .contato-form button {
+      padding: 0.8rem;
+      background-color: #0077ff;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .contato-img {
+  flex: 1;
+  background: url('imagens/ag_60_111-jpg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+    @media (max-width: 768px) {
+      .contato-container {
+        flex-direction: column;
+      }
+
+      .contato-img {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="curso.html">Curso</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="wow.html">World of Warcraft</a></li>
+        <li><a href="futebol.html">Futebol</a></li>
+        <li><a href="musicas.html">Músicas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="contato-container">
+    <div class="contato-form">
+      <h1>Fale comigo</h1>
+      <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <input type="tel" placeholder="Seu telefone" required>
+        <textarea rows="5" placeholder="Digite sua mensagem..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="contato-img"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Meu Portfólio</p>
+  </footer>
 </body>
 </html>
