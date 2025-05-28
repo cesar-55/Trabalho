@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .foto-perfil {
-      max-width: 400px;
-      width: 100%;
-      display: block;
-      margin: 0 auto 2rem auto;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="imagens/favicon-c.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="curso.html">Curso</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="wow.html">World of Warcraft</a></li>
-        <li><a href="futebol.html">Futebol</a></li>
-        <li><a href="musicas.html">Músicas</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Sobre</a></li>
+          <li><a href="curso.html">Curso</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="wow.html">World of Warcraft</a></li>
+          <li><a href="futebol.html">Futebol</a></li>
+          <li><a href="musicas.html">Músicas</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <img src="imagens/Imagem do WhatsApp de 2025-05-21 à(s) 10.09.13_01b7f1a2.jpg" alt="Foto de perfil" class="foto-perfil">
+    <main class="sobre-main">
+      <div class="sobre-texto">
+        <h1 class="nome">
+          <br>
+          <span>Cesar Ulisses</span><br>
+          <span>Rodrigues Pereira</span>
+        </h1>
+        <p class="descricao">Esse aqui sou eu</p>
 
-    <section class="media-section">
-      <div class="media-item"><img src="img/sobre1.jpg"><p>Sou um criador dedicado à inovação e ao design.</p></div>
-      <div class="media-item"><img src="img/sobre2.jpg"><p>Tenho paixão por tecnologia, moda e criatividade.</p></div>
-      <div class="media-item"><img src="img/sobre3.jpg"><p>Busco constantemente evoluir em tudo que faço.</p></div>
-    </section>
-  </main>
+        <div class="redes-sociais">
+          <a href="https://github.com/cesar-55/Trabalho" target="_blank" class="icon-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/cesarr_rp/" target="_blank" class="icon-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/cesar.ulisses.3/?locale=pt_BR" target="_blank" class="icon-link">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/cesar-pereira-234637350/" target="_blank" class="icon-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Meu Portfólio</p>
-  </footer>
+      <div class="sobre-foto">
+        <img src="imagens/Imagem do WhatsApp de 2025-05-21 à(s) 10.09.13_01b7f1a2.jpg" alt="Foto de perfil" class="foto-lateral">
+      </div>
+    </main>
+
+    <footer>
+      <p>Desenvolvido por mim</p>
+    </footer>
+  </div>
 </body>
 </html>

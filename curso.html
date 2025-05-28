@@ -2,34 +2,97 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curso</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .media-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 2%;
+      padding: 2rem 0;
+    }
+    .media-item {
+      width: 32%;
+      height: 400px;
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .media-item:hover { transform: scale(1.03); }
+    .media-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .media-item p {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s;
+    }
+    .media-item:hover p { opacity: 1; }
+    .media-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 35%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .media-item:hover::after { opacity: 1; }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Sobre</a></li>
-        <li><a href="curso.html">Curso</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="wow.html">World of Warcraft</a></li>
-        <li><a href="futebol.html">Futebol</a></li>
-        <li><a href="musicas.html">Músicas</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Meu Curso</h1>
-    <section class="media-section">
-      <div class="media-item"><img src="img/curso1.jpg"/><p>Estudo Ciências da Computação na UPF.</p></div>
-      <div class="media-item"><img src="img/curso2.jpg"/><p>Aprendi lógica de programação e HTML/CSS.</p></div>
-      <div class="media-item"><img src="img/curso3.jpg"/><p>Tenho feito projetos práticos para desenvolver habilidades.</p></div>
-      <div class="media-item"><img src="img/curso4.jpg"/><p>Quero me especializar em desenvolvimento full stack.</p></div>
-      <div class="media-item"><img src="img/curso5.jpg"/><p>Também estou aprendendo sobre design e usabilidade.</p></div>
-      <div class="media-item"><img src="img/curso6.jpg"/><p>Me dedico diariamente aos estudos e projetos pessoais.</p></div>
-    </section>
-  </main>
-  <footer><p>&copy; 2025 Meu Portfólio</p></footer>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Sobre</a></li>
+          <li><a href="curso.html">Curso</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="wow.html">World of Warcraft</a></li>
+          <li><a href="futebol.html">Futebol</a></li>
+          <li><a href="musicas.html">Músicas</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Curso</h1>
+      <section class="media-section">
+        <div class="media-item">
+          <img src="img/curso1.jpg" alt="Imagem Curso 1" />
+          <p>Estudo programação com foco em desenvolvimento web.</p>
+        </div>
+        <div class="media-item">
+          <img src="img/curso2.jpg" alt="Imagem Curso 2" />
+          <p>Estou iniciando na área de Ciência da Computação.</p>
+        </div>
+        <div class="media-item">
+          <img src="img/curso3.jpg" alt="Imagem Curso 3" />
+          <p>Gosto de aprender por meio de projetos práticos.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Desenvolvido por mim</p>
+    </footer>
+  </div>
 </body>
 </html>

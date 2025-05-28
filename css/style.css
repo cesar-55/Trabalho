@@ -1,88 +1,223 @@
-/* Reset básico */
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  height: 100%;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #0b0b0b; /* preto */
-  color: #f0f0f0;
-  line-height: 1.6;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-  background-color: #121212;
-  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+  padding: 1rem 0;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  color: #f0f0f0;
+  color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #0077cc; /* azul-marinho ao passar o mouse */
+  color: #00aaff;
 }
 
 main {
   flex: 1;
-  padding: 2rem 4rem;
+  padding: 2rem 5vw;
+  max-width: 1400px;
+  margin: auto;
 }
 
-h1 {
+main h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #ffffff;
-  font-size: 2rem;
+}
+
+footer {
+  background-color: #1f1f1f;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.sobre-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 4rem 5vw 6rem 5vw;
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.nome {
+  font-family: Georgia, serif;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+  padding-top: 0;
+}
+
+.descricao {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.icon-link {
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: #00aaff;
+}
+
+.sobre-foto {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.foto-lateral {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .media-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 2.5rem; /* 3rem entre linhas, 2.5rem entre colunas */
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
   padding: 2rem 0;
 }
 
 .media-item {
-  background-color: #111111;
-  border: 1px solid #2a2a2a; /* borda mais clara que o fundo */
-  border-radius: 16px; /* cantos arredondados */
-  padding: 1rem;
+  flex: 1;
+  max-width: 32%;
+  aspect-ratio: 1 / 1;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.media-item:hover {
+  transform: scale(1.03);
+}
+
+.media-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  max-width: 250px;
-  text-align: center;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.media-item:hover::after {
+  opacity: 1;
 }
 
 .media-item img {
   width: 100%;
-  aspect-ratio: 1/1; /* quadrado perfeito */
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #333;
-  margin-bottom: 0.5rem;
+  display: block;
 }
 
-footer {
-  background-color: #121212;
-  color: #ccc;
+.media-item p {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
   text-align: center;
-  padding: 1rem;
-  margin-top: auto;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s;
 }
 
+.media-item:hover p {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .media-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .media-item {
+    max-width: 90%;
+  }
+
+  .sobre-main {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+
+  .foto-lateral {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .nome {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .redes-sociais {
+    justify-content: center;
+  }
+}
