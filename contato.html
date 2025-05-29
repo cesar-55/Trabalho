@@ -24,6 +24,7 @@
 
     .contato-form h1 {
       margin-bottom: 1.5rem;
+      font-family: 'Rajdhani', sans-serif;
     }
 
     .contato-form form {
@@ -39,11 +40,31 @@
       border-radius: 8px;
       background-color: #1e1e1e;
       color: #fff;
+      transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .contato-form input::placeholder,
+    .contato-form textarea::placeholder {
+      color: #aaa;
+      transition: color 0.3s;
+    }
+
+    .contato-form input:hover,
+    .contato-form textarea:hover {
+      transform: scale(1.03);
+      color: #00aaff;
+      box-shadow: 0 0 12px rgba(0, 170, 255, 0.4);
+    }
+
+    .contato-form input:hover::placeholder,
+    .contato-form textarea:hover::placeholder {
+      color: #00aaff;
     }
 
     .contato-form input:focus,
     .contato-form textarea:focus {
-      outline: 1px solid #0077ff;
+      outline: 1px solid #00aaff;
     }
 
     .contato-form button {
@@ -53,13 +74,19 @@
       border-radius: 8px;
       color: #fff;
       cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .contato-form button:hover {
+      background-color: #00aaff;
     }
 
     .contato-img {
-  flex: 1;
-  background: url('imagens/ag_60_111-jpg.jpg') no-repeat center center;
-  background-size: cover;
-}
+      flex: 1;
+      background: url('imagens/ag_60_111-jpg.jpg') no-repeat center center;
+      background-size: cover;
+    }
 
     @media (max-width: 768px) {
       .contato-container {
@@ -71,7 +98,6 @@
       }
     }
 
-     
     footer {
       background-color: rgba(31, 31, 31, 0.7);
       text-align: center;
@@ -80,7 +106,6 @@
       margin-top: auto;
       font-family: 'Rajdhani', sans-serif;
     }
-  
   </style>
 </head>
 <body>
