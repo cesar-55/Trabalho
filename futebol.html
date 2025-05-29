@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Futebol</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
   <style>
     .media-section {
       display: flex;
@@ -44,20 +45,55 @@
       transition: opacity 0.3s;
     }
     .media-item:hover p { opacity: 1; }
+
     .media-item::after {
       content: "";
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 35%;
+      height: 100%;
       background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1;
     }
     .media-item:hover::after { opacity: 1; }
+
+    .fundo-futebol {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    footer {
+      background-color: rgba(31, 31, 31, 0.7);
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: auto;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .descricao-final {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      color: #ddd;
+    }
   </style>
 </head>
 <body>
+
+  <img src="imagens/imagem-fundo-futebol.jpg" alt="Fundo WoW" class="fundo-futebol" />
+
   <div class="wrapper">
     <header>
       <nav>
@@ -76,18 +112,19 @@
       <h1>Futebol</h1>
       <section class="media-section">
         <div class="media-item">
-          <img src="img/futebol1.jpg" alt="Imagem Futebol 1" />
-          <p>Jogo futebol com os amigos nos fins de semana.</p>
+          <img src="imagens/futebol-costas.jpg" alt="Imagem Futebol 1" />
+          <p>Desde criança empre gostei muito de praticar futebol. Jogova alguns campeonatos e torneios, na posição de lateral</p>
         </div>
         <div class="media-item">
-          <img src="img/futebol2.jpg" alt="Imagem Futebol 2" />
-          <p>Meu time favorito é o Grêmio.</p>
+          <img src="imagens/futebol-lesão.jpg" alt="Imagem Futebol 2" />
+          <p>Mas infelizmente no ínicio de 2024, acabei lesionando o joelho. E realizei uma grande cirurgia. Pensei que não voltaria jogar.</p>
         </div>
         <div class="media-item">
-          <img src="img/futebol3.jpg" alt="Imagem Futebol 3" />
-          <p>Acompanho campeonatos nacionais e internacionais.</p>
+          <img src="imagens/futebol-psg.jpg" alt="Imagem Futebol 3" />
+          <p>Com muita determinação e esforço. Felizmente mês passado voltei a jogar campeonatos, isso para mim foi uma grande conquista. </p>
         </div>
       </section>
+       <p class="descricao-final">Torço para o inter e para que o grêmio vá mal.</p>
     </main>
 
     <footer>

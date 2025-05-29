@@ -7,8 +7,190 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="imagens/favicon-c.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .fundo-sobre {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    header {
+      background-color: rgba(31, 31, 31, 0.7);
+    }
+
+    footer {
+      background-color: rgba(31, 31, 31, 0.7);
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: auto;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .sobre-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 5rem;
+      padding: 4rem 5vw 6rem 5vw;
+    }
+
+    .sobre-texto {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .nome {
+      font-family: Georgia, serif;
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin: 0 0 0.5rem 0;
+      text-align: left;
+      padding-top: 0;
+    }
+
+    .descricao {
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .redes-sociais {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .icon-link {
+      color: white;
+      font-size: 1.8rem;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .icon-link:hover {
+      color: #00aaff;
+    }
+
+    .sobre-foto-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      max-width: 420px;
+    }
+
+    .sobre-foto {
+      position: relative;
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .sobre-foto:hover {
+      transform: scale(1.03);
+    }
+
+    .foto-lateral {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .sobre-foto::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .sobre-foto:hover::after {
+      opacity: 1;
+    }
+
+    .legenda-foto {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      color: white;
+      font-size: 1rem;
+      font-family: 'Rajdhani', sans-serif;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s ease;
+      text-shadow: 1px 1px 3px black;
+      pointer-events: none;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+
+    .sobre-foto:hover .legenda-foto {
+      opacity: 1;
+    }
+
+    .descricao-final {
+      margin-top: 1rem;
+      font-family: Georgia, serif;
+      color: #ddd;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .sobre-main {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 2rem;
+      }
+
+      .sobre-texto {
+        text-align: center;
+      }
+
+      .foto-lateral {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .nome {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      .redes-sociais {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <img src="imagens/fundo.sobre.jpg" alt="Fundo Sobre" class="fundo-sobre" />
+
   <div class="wrapper">
     <header>
       <nav>
@@ -33,26 +215,22 @@
         <p class="descricao">Esse aqui sou eu</p>
 
         <div class="redes-sociais">
-          <a href="https://github.com/cesar-55/Trabalho" target="_blank" class="icon-link">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/cesarr_rp/" target="_blank" class="icon-link">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.facebook.com/cesar.ulisses.3/?locale=pt_BR" target="_blank" class="icon-link">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/cesar-pereira-234637350/" target="_blank" class="icon-link">
-            <i class="fab fa-linkedin"></i>
-          </a>
+          <a href="https://github.com/cesar-55/Trabalho" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/cesarr_rp/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/cesar.ulisses.3/?locale=pt_BR" target="_blank" class="icon-link"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/cesar-pereira-234637350/" target="_blank" class="icon-link"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
 
-      <div class="sobre-foto">
-        <img src="imagens/Imagem do WhatsApp de 2025-05-21 à(s) 10.09.13_01b7f1a2.jpg" alt="Foto de perfil" class="foto-lateral">
+      <div class="sobre-foto-container">
+        <div class="sobre-foto">
+          <img src="imagens/Imagem do WhatsApp de 2025-05-21 à(s) 10.09.13_01b7f1a2.jpg" alt="Foto de perfil" class="foto-lateral">
+          <div class="legenda-foto">Tenho 19 anos, moro em Mormaço, trabalho com designer gráfico e namoro uma linda guria</div>
+        </div>
+        <p class="descricao-final">Aproveita os momentos bons da vida, ela é curta!</p>
       </div>
     </main>
-
+      <p class="descricao-final">OBS: passe o mouse pelas imagens, para visualizar os textos</p>
     <footer>
       <p>Desenvolvido por mim</p>
     </footer>

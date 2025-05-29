@@ -3,15 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Músicas Favoritas</title>
+  <title>Músicas</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      height: 100%;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .fundo-musicas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(31, 31, 31, 0.7);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0.7rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 5vw;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
     .media-section {
       display: flex;
       justify-content: space-between;
       gap: 2%;
       padding: 2rem 0;
     }
+
     .media-item {
       width: 32%;
       height: 400px;
@@ -22,13 +91,18 @@
       position: relative;
       transition: transform 0.3s;
     }
-    .media-item:hover { transform: scale(1.03); }
+
+    .media-item:hover {
+      transform: scale(1.03);
+    }
+
     .media-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
+
     .media-item p {
       position: absolute;
       bottom: 15px;
@@ -43,21 +117,50 @@
       z-index: 2;
       transition: opacity 0.3s;
     }
-    .media-item:hover p { opacity: 1; }
+
+    .media-item:hover p {
+      opacity: 1;
+    }
+
     .media-item::after {
       content: "";
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 35%;
+      height: 100%;
       background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
       opacity: 0;
       transition: opacity 0.3s;
+      z-index: 1;
     }
-    .media-item:hover::after { opacity: 1; }
+
+    .media-item:hover::after {
+      opacity: 1;
+    }
+
+    footer {
+      background-color: rgba(31, 31, 31, 0.7);
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: auto;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .descricao-final {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      color: #ddd;
+    }
   </style>
 </head>
 <body>
+
+  
+  <img src="imagens/os.amigos.jpg" alt="Fundo Músicas" class="fundo-musicas" />
+
   <div class="wrapper">
     <header>
       <nav>
@@ -76,18 +179,19 @@
       <h1>Músicas Favoritas</h1>
       <section class="media-section">
         <div class="media-item">
-          <img src="img/musica1.jpg" alt="Imagem Música 1" />
-          <p>Gosto de rock e MPB nas horas vagas.</p>
+          <img src="imagens/sertanejo.jpg" alt="Imagem Música 1" />
+          <p>O que mais toca no meu fone e no rádio do carro é sertanejo. Mas tem que ser antigo</p>
         </div>
         <div class="media-item">
-          <img src="img/musica2.jpg" alt="Imagem Música 2" />
-          <p>Costumo ouvir música para relaxar e estudar.</p>
+          <img src="imagens/rock.jpg" alt="Imagem Música 2" />
+          <p>Curto bastante também rock antigo. Inclusive minha entrada de formatura foi com It's My Life de Bon Jovi</p>
         </div>
         <div class="media-item">
-          <img src="img/musica3.jpg" alt="Imagem Música 3" />
-          <p>Minhas playlists têm de tudo um pouco.</p>
+          <img src="imagens/eclético.jpg" alt="Imagem Música 3" />
+          <p>Sempre fui, e pretendo continuar sendo, bem eclético para as músicas — escuto de tudo um pouco</p>
         </div>
       </section>
+       <p class="descricao-final">Dormi na praça, pensando nela.....</p>
     </main>
 
     <footer>

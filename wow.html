@@ -5,75 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>World of Warcraft</title>
   <link rel="stylesheet" href="css/style.css" />
-    <style>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      height: 100%;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .fundo-wow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .wow-logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 130px;
+      z-index: 2;
+    }
+
+    header {
+      background-color: rgba(31, 31, 31, 0.7);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 5vw;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .media-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 2%;
+      padding: 2rem 0;
+    }
+
+    .media-item {
+      width: 32%;
+      height: 400px; /* ⬅️ Altura fixa igual à do futebol */
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .media-item:hover {
+      transform: scale(1.03);
+    }
+
+    .media-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .media-item:hover::after {
+      opacity: 1;
+    }
+
+    .media-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .media-item p {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s;
+    }
+
+    .media-item:hover p {
+      opacity: 1;
+    }
+
+    .descricao-final {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      color: #ddd;
+    }
+
+    footer {
+      background-color: rgba(31, 31, 31, 0.7);
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: auto;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    @media (max-width: 1024px) {
       .media-section {
-        display: flex;
-        justify-content: space-between;
-        gap: 2%;
-        padding: 2rem 0;
+        flex-direction: column;
+        align-items: center;
       }
 
       .media-item {
-        width: 32%;
-        height: 400px;
-        background-color: #1e1e1e;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        overflow: hidden;
-        position: relative;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .media-item:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 25px #00aaff;
-      }
-
-      .media-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .media-item p {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
         width: 90%;
-        text-align: center;
-        color: white;
-        font-family: Georgia, serif;
-        font-size: 1rem;
-        opacity: 0;
-        z-index: 2;
-        transition: opacity 0.3s;
+        height: auto;
       }
-
-      .media-item:hover p {
-        opacity: 1;
-      }
-
-      .media-item::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 80%; 
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-        opacity: 0;
-        transition: opacity 0.3s;
-        z-index: 1;
-      }
-
-      .media-item:hover::after {
-        opacity: 1;
-      }
-    </style>
-
+    }
+  </style>
 </head>
 <body>
+
+  <img src="imagens/imagem-fundo-wow.jpg" alt="Fundo WoW" class="fundo-wow" />
+
   <div class="wrapper">
     <header>
       <nav>
@@ -88,26 +195,29 @@
       </nav>
     </header>
 
+    <img src="imagens/wow.png" alt="Logo WoW" class="wow-logo" />
+
     <main>
       <h1>World of Warcraft</h1>
       <section class="media-section">
         <div class="media-item">
           <img src="imagens/tauren-druid-v0-w6e2p3mth4ra1.webp" alt="Imagem WoW 1" />
-          <p>Meu personagem favorito no jogo é um guerreiro tank.</p>
+          <p>Minha classe favorita no wow é druida, e a raça que mais gosto é tauren</p>
         </div>
         <div class="media-item">
-          <img src="img/wow2.jpg" alt="Imagem WoW 2" />
-          <p>Adoro explorar raids com minha guilda nas noites de semana.</p>
+          <img src="imagens/wow-family.webp" alt="Imagem WoW 2" />
+          <p>Às vezes jogo com meu tio e meus primos. Já jogamos juntos há anos, é tipo um momento em família hahaha</p>
         </div>
         <div class="media-item">
-          <img src="img/wow3.jpg" alt="Imagem WoW 3" />
-          <p>Já participei de eventos PvP e campanhas épicas no servidor.</p>
+          <img src="imagens/lich-king.jpg" alt="Imagem WoW 3" />
+          <p>O personagem mais FODA do jogo pra mim é o Lich King.</p>
         </div>
       </section>
+      <p class="descricao-final">Esse jogo fez parte da minha infância, por isso tenho um apego enorme por ele.</p>
     </main>
 
     <footer>
-      <p>&copy; 2025 Meu Portfólio</p>
+      <p>Desenvolvido por mim</p>
     </footer>
   </div>
 </body>
